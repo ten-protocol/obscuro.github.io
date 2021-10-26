@@ -5,4 +5,4 @@ Introduction to Obscuro
 
 Welcome to Obscuro.
 
-![image](assets/images/global-map.png)
+![image](assets/images/1024px-Sunrise_Obscured_by_Clouds.jpg)
