@@ -18,3 +18,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  
+  titles_from_headings:
+  enabled:     true
+  strip_title: true
