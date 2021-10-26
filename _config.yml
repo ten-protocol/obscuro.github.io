@@ -21,6 +21,9 @@ plugins:
   
 titles_from_headings:
   strip_title: true
+  
+atom_feed:
+  hide: true
 
 defaults:
   - scope:
