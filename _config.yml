@@ -1,15 +1,15 @@
 # Theme Settings
-remote_theme              : "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin     : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"
 
 # Site Settings
-locale                    : "en-UK"
-title                     : "Obscuro"
-subtitle                  : "Ethereum-compatible confidential smart contract L2 network."
-description               : "Obscuro is an Ethereum-compatible confidential smart contract L2 network."
-url                       : "https://obscu.ro"
-name                      : "James Carlyle"
-repository                : "corda/obscuro.github.io"
+locale: "en-UK"
+title: "Obscuro"
+subtitle: "Ethereum-compatible confidential smart contract L2 network."
+description: "Obscuro is an Ethereum-compatible confidential smart contract L2 network."
+url: "https://obscu.ro"
+name: "James Carlyle"
+repository: "corda/obscuro.github.io"
 
 plugins:
   - jekyll-paginate
@@ -18,7 +18,17 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-titles-from-headings
   
-  titles_from_headings    :
-    enabled               : true
-    strip_title           : true
+#titles_from_headings:
+#    enabled: true
+#    strip_title: true
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      strip_title: true
