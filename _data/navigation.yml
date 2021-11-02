@@ -6,4 +6,4 @@ pages:
   - title: About
     children:
       - title: Contact
-        url: contact.html
+        url: /about/contact.html
