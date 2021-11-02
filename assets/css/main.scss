@@ -12,7 +12,7 @@ html {
   font-size: 16px;
 }
 
-/* Increase font size for nav bar from 0.75em default. */
-.sidebar p, .sidebar li {
+/* Increase font size for nav bar from 0.75em default, and for title from 0.625em default */
+.sidebar p, .sidebar li, .site-subtitle {
   font-size: 0.9em
 }
