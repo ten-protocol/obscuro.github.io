@@ -2,7 +2,7 @@ pages:
   - title: Documentation
     children:
       - title: Whitepaper
-        url: /obscuro-whitepaper/index.md
+        url: /obscuro-whitepaper/index.html
   - title: About
     children:
       - title: Contact

@@ -1,4 +1,4 @@
-{% include_relative obscuro-whitepaper/abstract.md %}
+Hello World!
 
 ![image](assets/images/1024px-Sunrise_Obscured_by_Clouds.jpg)
 
