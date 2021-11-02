@@ -6,4 +6,4 @@ pages:
   - title: About
     children:
       - title: Contact
-        url: contact.md
+        url: contact.html
