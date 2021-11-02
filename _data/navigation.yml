@@ -1,0 +1,9 @@
+pages:
+  - title: Documentation
+    children:
+      - title: Whitepaper
+        url: /obscuro-whitepaper/index.md
+  - title: About
+    children:
+      - title: Contact
+        url: contact.md

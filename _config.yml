@@ -10,7 +10,6 @@ description: "Obscuro is an Ethereum-compatible confidential smart contract L2 n
 url: "https://obscu.ro"
 name: "Obscuro"
 repository: "corda/obscuro.github.io"
-minimal_mistakes_skin: default
 search: true
 
 plugins:
@@ -30,6 +29,8 @@ defaults:
       path: ""
       type: pages
     values:
+      sidebar:
+        nav: "pages"
       layout: single
       author_profile: true
       strip_title: true
