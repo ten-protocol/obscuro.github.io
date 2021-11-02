@@ -1,4 +1,5 @@
-{% include_relative obscuro-whitepaper/index.md %}
+{% include_relative https://github.com/corda/obscuro-whitepaper/index.md %}
+
 
 ![image](assets/images/1024px-Sunrise_Obscured_by_Clouds.jpg)
 
