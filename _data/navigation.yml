@@ -1,8 +1,24 @@
 pages:
-  - title: Documentation
+  - title: Whitepaper
     children:
-      - title: Whitepaper
-        url: /obscuro-whitepaper/index.html
+      - title: Abstract
+        url: /obscuro-whitepaper/abstract.html
+      - title: Motivation
+        url: /obscuro-whitepaper/motivation.html
+      - title: Context
+        url: /obscuro-whitepaper/context.html
+      - title: High Level Design
+        url: /obscuro-whitepaper/high-level-design.html
+      - title: Tokenomics
+        url: /obscuro-whitepaper/tokenomics.html
+      - title: Governance
+        url: /obscuro-whitepaper/governance.html
+      - title: Technical Background
+        url: /obscuro-whitepaper/technical-background.html
+      - title: Detailed Design
+        url: /obscuro-whitepaper/detailed-design.html
+      - title: Appendix
+        url: /obscuro-whitepaper/appendix.html
   - title: About
     children:
       - title: Contact
