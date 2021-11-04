@@ -20,4 +20,4 @@ The Obscuro team includes:
 * Gavin Thomas ([LinkedIn](https://www.linkedin.com/in/gavthomas/))
 * Roger Willis ([LinkedIn](https://www.linkedin.com/in/roger-willis/))
 
-[Document history]({{ site.github.repository_url }}/blame/main/{{page.path}})
+[Page history]({{ site.github.repository_url }}/blame/main/{{page.path}})
