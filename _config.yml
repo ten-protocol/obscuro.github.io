@@ -17,6 +17,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache
   - jekyll-titles-from-headings
+  - jekyll-relative-links
   
 titles_from_headings:
   strip_title: true
