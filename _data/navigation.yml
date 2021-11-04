@@ -19,6 +19,8 @@ pages:
         url: /obscuro-whitepaper/detailed-design.html
       - title: Appendix
         url: /obscuro-whitepaper/appendix.html
+      - title: All-in-one (save as .pdf)
+        url: /obscuro-whitepaper/amalgamated.html
   - title: About
     children:
       - title: Contact
