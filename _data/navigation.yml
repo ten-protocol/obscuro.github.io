@@ -25,3 +25,5 @@ pages:
     children:
       - title: Contact
         url: /about/contact.html
+      - title: Join the Team
+        url: /about/join-the-team.html

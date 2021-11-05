@@ -11,6 +11,7 @@ url: "https://obscu.ro"
 name: "Obscuro"
 repository: "corda/obscuro.github.io"
 search: true
+logo: "/assets/images/logo-small.png"
 
 plugins:
   - jekyll-paginate
