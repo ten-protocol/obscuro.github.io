@@ -21,12 +21,12 @@ We're looking for curious polymath-doers who can comprehend quickly and are incl
 #### Team
 Are you passionate about blockchain and decentralized networks and their potential to transform how people, companies, and governments interact with finance? Do you want to define the future direction for Obscuro's DeFi capabilities?
 
-Permissionless blockchains are growing and evolving rapidly, and our [whitepaper](/obscuro-whitepaper/abstract.md) lays out our vision, motivation and goals.
+Permissionless blockchains are growing and evolving rapidly, and our [whitepaper](../obscuro-whitepaper/abstract.md) lays out our vision, motivation and goals.
 
 #### Responsibilities
 We are looking for an experienced product engineer to contribute to the vision, roadmap, and feature definition of Obscuro in the rapidly evolving and broad landscape of blockchain technology and use cases. You'd be part of the team responsible for implementing the offerings, including early prototyping (with a focus on user experience) and large-scale engineering.
 
-We are looking for a candidate that is obsessed with delivering the most customer-centric experiences on the planet, showing proven success in ownership, bias for action, and thinking big. You will need to exhibit excellent judgement, prioritizing between features, architectural improvements, and operational excellence. We are looking for a strong sense of ownership and a communicator who can share their vision with R3 senior leadership, but also be part of an engineering team to dive deep into details to make ideas a reality. You will have a track record delivering outstanding product ideas at scale in emerging spaces, and are passionate about blockchain, distributed systems and cloud scale software. Ideally you will have experience delivering products or innovations in the blockchain, DeFi or Traditional Financial Service spaces.
+We are looking for a candidate that is obsessed with delivering the most customer-centric experiences on the planet, showing proven success in ownership, bias for action, and thinking big. You will need to exhibit excellent judgement, prioritizing between features, architectural improvements, and operational excellence. We are looking for a strong sense of ownership and a communicator who can share their vision with senior stakeholders, but also be part of an engineering team to dive deep into details to make ideas a reality. You will have a track record delivering outstanding product ideas at scale in emerging spaces, and are passionate about blockchain, distributed systems and cloud scale software. Ideally you will have experience delivering products or innovations in the blockchain, DeFi or Traditional Financial Service spaces.
 
 #### Other Skills and Responsibilities
 * Maturity gained through some form of work experience.
