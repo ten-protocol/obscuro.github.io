@@ -9,8 +9,8 @@ We'd love to talk with you if you're interested in getting involved in any capac
 2. Developers with Solidity skills needed to build rock-solid Management, Bridge and Rollup contracts, and UI skills for a custom wallet capable of creating encrypted transactions.
 3. Legal experts, developer relationship and community builders, project managers, product managers and others needed to design a governance model and implement it, and build a passionate community.
 
-## Sample Job Description
-We're looking for curious polymath-doers who can comprehend quickly and are inclined to action. We make many decisions as a team, and try to simplify and standardise job descriptions, such as this one for a product engineer: 
+## Our Culture
+We're looking for curious engineers who can comprehend quickly and are inclined to action. We make many decisions as a team. 
 
 ### Product Engineer
 #### General
