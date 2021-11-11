@@ -44,7 +44,7 @@ footer:
       url: "https://twitter.com/obscuronet"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/obscuro/obscuro-whitepaper"
+      url: "https://github.com/obscuronet/obscuro-whitepaper"
 
 analytics:
   provider: "google-gtag"
