@@ -41,10 +41,10 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/0xScuro"
+      url: "https://twitter.com/obscuronet"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/corda/obscuro"
+      url: "https://github.com/obscuro/obscuro-whitepaper"
 
 analytics:
   provider: "google-gtag"
