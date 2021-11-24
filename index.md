@@ -1,6 +1,6 @@
 ![image](assets/images/obscuro-full.png)
 **Confidential Smart Contracts for Ethereum**
 
-![image](assets/images/1024px-Sunrise_Obscured_by_Clouds.jpg)
+Please explore our whitepaper using the menu on the left.
 
 [Page history]({{ site.github.repository_url }}/blame/main/{{page.path}})
