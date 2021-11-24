@@ -27,8 +27,6 @@ pages:
         url: /obscuro-whitepaper/fees.html
       - title: Threat Model
         url: /obscuro-whitepaper/threat-model.html
-      - title: Threat Model
-        url: /obscuro-whitepaper/threat-model.html
       - title: Obscuro-Ethereum Interaction
         url: /obscuro-whitepaper/obscuro-ethereum-interaction.html
       - title: Governance
