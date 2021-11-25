@@ -7,28 +7,22 @@ pages:
         url: /obscuro-whitepaper/motivation.html
       - title: Context
         url: /obscuro-whitepaper/context.html
+      - title: Technical Background
+        url: /obscuro-whitepaper/technical-background.html
       - title: High Level Design
         url: /obscuro-whitepaper/high-level-design.html
-      - title: Aggregators and Verifiers
-        url: /obscuro-whitepaper/aggregators-verifiers.html
-      - title: Rollup Data Structure
-        url: /obscuro-whitepaper/rollup-data-structure.html
-      - title: Proof of Block Inclusion
-        url: /obscuro-whitepaper/pobi.html
-      - title: Cryptography
-        url: /obscuro-whitepaper/cryptography.html
-      - title: Account-based State
-        url: /obscuro-whitepaper/account-based-state.html
-      - title: L1 Contracts
-        url: /obscuro-whitepaper/l1-contracts.html
-      - title: Tokenomics
-        url: /obscuro-whitepaper/tokenomics.html
+      - title: Consensus
+        url: /obscuro-whitepaper/consensus.html
+      - title: Detailed Design
+        url: /obscuro-whitepaper/detailed-design.html
       - title: Fees
         url: /obscuro-whitepaper/fees.html
       - title: Threat Model
         url: /obscuro-whitepaper/threat-model.html
       - title: Obscuro-Ethereum Interaction
         url: /obscuro-whitepaper/obscuro-ethereum-interaction.html
+      - title: Tokenomics
+        url: /obscuro-whitepaper/tokenomics.html
       - title: Governance
         url: /obscuro-whitepaper/governance.html
       - title: Appendix
