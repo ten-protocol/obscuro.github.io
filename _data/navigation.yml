@@ -5,8 +5,8 @@ pages:
         url: /obscuro-whitepaper/abstract.html
       - title: Motivation
         url: /obscuro-whitepaper/motivation.html
-      - title: Context
-        url: /obscuro-whitepaper/context.html
+      - title: Challenges
+        url: /obscuro-whitepaper/challenges.html
       - title: Technical Background
         url: /obscuro-whitepaper/technical-background.html
       - title: High Level Design
