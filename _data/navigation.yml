@@ -17,10 +17,10 @@ pages:
         url: /obscuro-whitepaper/detailed-design.html
       - title: Fees and Rewards
         url: /obscuro-whitepaper/fees-rewards.html
-      - title: Threat Model
-        url: /obscuro-whitepaper/threat-model.html
       - title: Obscuro-Ethereum Interaction
         url: /obscuro-whitepaper/obscuro-ethereum-interaction.html
+      - title: Threat Model
+        url: /obscuro-whitepaper/threat-model.html
       - title: Tokenomics
         url: /obscuro-whitepaper/tokenomics.html
       - title: Governance
