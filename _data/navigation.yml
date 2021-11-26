@@ -15,8 +15,8 @@ pages:
         url: /obscuro-whitepaper/consensus.html
       - title: Detailed Design
         url: /obscuro-whitepaper/detailed-design.html
-      - title: Fees
-        url: /obscuro-whitepaper/fees.html
+      - title: Fees and Rewards
+        url: /obscuro-whitepaper/fees-rewards.html
       - title: Threat Model
         url: /obscuro-whitepaper/threat-model.html
       - title: Obscuro-Ethereum Interaction
