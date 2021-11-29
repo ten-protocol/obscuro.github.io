@@ -19,7 +19,6 @@ plugins:
   - jekyll-include-cache
   - jekyll-titles-from-headings
   - jekyll-relative-links
-  - jekyll-pdf
   
 titles_from_headings:
   strip_title: true
@@ -37,7 +36,6 @@ defaults:
       layout: single
       author_profile: true
       strip_title: true
-      pdf: true
 
 footer:
   links:
