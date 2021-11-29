@@ -1,2 +1,1 @@
-gems:
-  - jekyll-pdf
+gem "jekyll-pdf"
