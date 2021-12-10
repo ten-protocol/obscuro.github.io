@@ -31,7 +31,5 @@ pages:
         url: /obscuro-whitepaper/amalgamated.html
   - title: About
     children:
-      - title: Contact
-        url: /about/contact.html
-      - title: Join the Team
-        url: /about/join-the-team.html
+      - title: Obscuro Home
+        url: https://obscu.ro
