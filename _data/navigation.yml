@@ -27,7 +27,7 @@ pages:
         url: /obscuro-whitepaper/governance.html
       - title: Appendix
         url: /obscuro-whitepaper/appendix.html
-      - title: All-in-one (save as .pdf)
+      - title: All-in-one
         url: /obscuro-whitepaper/amalgamated.html
   - title: About
     children:
