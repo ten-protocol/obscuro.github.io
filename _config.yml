@@ -50,3 +50,5 @@ analytics:
   provider: "google-gtag"
   google:
     tracking_id: "G-XL6VWGQK1P"
+
+theme: jekyll-theme-slate
