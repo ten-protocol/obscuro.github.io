@@ -1,4 +1,32 @@
 pages:
+  - title: What is Obscuro?
+    children:
+      - title: Privacy Matters
+        url: what-is-obscuro/privacy-matters.html
+      - title: Technology
+        url: what-is-obscuro/technology.html
+      - title: User Experience
+        url: what-is-obscuro/user-experience.html
+      - title: Tokens
+        url: what-is-obscuro/tokens.html
+      - title: Community
+        url: what-is-obscuro/community.html
+      - title: Roadmap
+        url: what-is-obscuro/roadmap.html
+  - title: Tokenomics
+    children:
+      - title: Overview
+        url: tokenomics/overview.html
+  - title: Obscuro Testnet
+    children:
+      - title: Introduction
+        url: testnet/Introduction.html
+      - title: Deploying a Smart Contract
+        url: testnet/deploying-a-smart-contract.html
+      - title: Create a New Node
+        url: testnet/create-a-new-node.html
+      - title: Uninstall
+        url: testnet/uninstall.html
   - title: Whitepaper
     children:
       - title: Abstract
@@ -33,3 +61,4 @@ pages:
     children:
       - title: Obscuro Home
         url: https://obscu.ro
+

@@ -5,13 +5,18 @@ minimal_mistakes_skin: "default"
 # Site Settings
 locale: "en-UK"
 title: "Obscuro"
-subtitle: "Ethereum-compatible confidential smart contract L2 network."
+# subtitle: "Privacy matters."
 description: "Obscuro is an Ethereum-compatible confidential smart contract L2 network."
 url: "https://obscu.ro"
 name: "Obscuro"
-repository: "corda/obscuro.github.io"
+repository: "obscuronet/obscuro.github.io"
 search: true
-logo: "/assets/images/logo-small.png"
+# logo: "/assets/images/obscuro-small_88x88.png"
+
+# Outputting
+# permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
 
 plugins:
   - jekyll-paginate
@@ -34,6 +39,7 @@ defaults:
       sidebar:
         nav: "pages"
       layout: single
+      classes: wide
       author_profile: true
       strip_title: true
 
@@ -45,6 +51,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/obscuronet"
+    - label: "Discord"
+      icon: "fab fa-fw fa-discord"
+      url: "https://discord.gg/7pkKv2Tyfn"
 
 analytics:
   provider: "google-gtag"
