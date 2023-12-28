@@ -4,14 +4,14 @@ minimal_mistakes_skin: "default"
 
 # Site Settings
 locale: "en-UK"
-title: "Obscuro"
+title: "Ten"
 subtitle: "Ethereum-equivalent confidential smart contract L2 network."
-description: "Obscuro is an Ethereum-equivalent confidential smart contract L2 network."
-url: "https://obscu.ro"
-name: "Obscuro"
-repository: "obscuronet/obscuro.github.io"
+description: "Ten is an Ethereum-equivalent confidential smart contract L2 network."
+url: "https://ten.xyz"
+name: "Ten"
+repository: "ten-protocol/obscuro.github.io"
 search: true
-logo: "/assets/images/logo-small.png"
+logo: "/assets/images/favicon-32x32.png"
 
 plugins:
   - jekyll-paginate
@@ -41,10 +41,10 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/obscuronet"
+      url: "https://twitter.com/tenprotocol"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/obscuronet"
+      url: "https://github.com/ten-protocol"
 
 analytics:
   provider: "google-gtag"
