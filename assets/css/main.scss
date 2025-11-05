@@ -15,11 +15,11 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   min-height: 100vh;
 }
 
-/* Animated Background Effect (inspired by Boundless) */
+/* Subtle Background Pattern */
 body::before {
   content: "";
   position: fixed;
@@ -28,17 +28,17 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 70, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(70, 120, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(200, 70, 255, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(120, 70, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(70, 120, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(200, 70, 255, 0.02) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
-  animation: backgroundShift 20s ease-in-out infinite;
+  animation: backgroundShift 30s ease-in-out infinite;
 }
 
 @keyframes backgroundShift {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.1); }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
 }
 
 /* Reading Progress Bar */
@@ -57,9 +57,10 @@ body::before {
 
 /* Enhanced Sidebar */
 .sidebar {
-  background: rgba(15, 15, 20, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar p, .sidebar li, .site-subtitle {
@@ -71,7 +72,7 @@ body::before {
 }
 
 .nav__list a {
-  color: rgba(255, 255, 255, 0.8);
+  color: #4a4a4a;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -79,25 +80,25 @@ body::before {
 }
 
 .nav__list a:hover {
-  background: rgba(120, 70, 255, 0.1);
-  color: #fff;
+  background: rgba(120, 70, 255, 0.08);
+  color: #1a1a1a;
   transform: translateX(5px);
 }
 
 .nav__list .active a {
-  background: linear-gradient(90deg, rgba(120, 70, 255, 0.2), rgba(70, 120, 255, 0.2));
-  color: #fff;
+  background: linear-gradient(90deg, rgba(120, 70, 255, 0.1), rgba(70, 120, 255, 0.1));
+  color: #1a1a1a;
   border-left: 3px solid #7846ff;
 }
 
 /* Main Content Area */
 .page {
-  background: rgba(20, 20, 25, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 16px;
   padding: 2rem;
   margin: 2rem auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   animation: fadeInUp 0.6s ease-out;
 }
 
@@ -138,7 +139,7 @@ body::before {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
   margin-bottom: 2rem;
 }
 
@@ -166,12 +167,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
 }
 
 p {
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: #4a4a4a;
   margin-bottom: 1.5rem;
 }
 
@@ -179,7 +180,7 @@ blockquote {
   border-left: 4px solid #7846ff;
   padding-left: 1.5rem;
   margin: 2rem 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: #333;
   background: rgba(120, 70, 255, 0.05);
   padding: 1.5rem;
   border-radius: 8px;
@@ -187,24 +188,24 @@ blockquote {
 
 /* Code Blocks */
 pre {
-  background: rgba(10, 10, 15, 0.9);
-  border: 1px solid rgba(120, 70, 255, 0.2);
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1.5rem;
   overflow-x: auto;
 }
 
 code {
-  background: rgba(120, 70, 255, 0.1);
+  background: rgba(120, 70, 255, 0.08);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  color: #46b9ff;
+  color: #7846ff;
 }
 
 /* Images */
 img {
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile Responsiveness */
@@ -230,8 +231,8 @@ img {
 
 /* Footer Enhancement */
 .page__footer {
-  background: rgba(10, 10, 15, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
 }
 
 /* Link Styles */

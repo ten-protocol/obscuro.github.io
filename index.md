@@ -50,8 +50,8 @@ Navigate through the comprehensive technical documentation using the menu on the
 
 ---
 
-<div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-  <small style="color: rgba(255, 255, 255, 0.5);">
-    <a href="{{ site.github.repository_url }}/blame/main/{{page.path}}" style="color: rgba(255, 255, 255, 0.5);">Page history</a>
+<div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+  <small style="color: #666;">
+    <a href="{{ site.github.repository_url }}/blame/main/{{page.path}}" style="color: #666;">Page history</a>
   </small>
 </div>
