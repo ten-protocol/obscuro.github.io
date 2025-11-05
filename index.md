@@ -4,21 +4,16 @@ classes: wide
 ---
 
 <div class="hero-section">
-  <h1 class="hero-title">TEN Protocol</h1>
   <p class="hero-subtitle">The Encrypted Network for Ethereum</p>
   
   <div style="margin: 3rem 0;">
     <a href="/obscuro-whitepaper/abstract.html" class="btn--primary">
       Read Whitepaper →
     </a>
-    <a href="assets/images/obscuro-whitepaper-0-10-0.pdf" class="btn--primary" style="margin-left: 1rem; background: transparent; border: 2px solid #7846ff;">
+    <a href="assets/images/obscuro-whitepaper-0-10-0.pdf" class="btn--primary" style="margin-left: 1rem; background: white; border: 2px solid #000; color: #000;">
       Download PDF ↓
     </a>
   </div>
-</div>
-
-<div style="text-align: center; margin: 4rem 0;">
-  <img src="assets/images/ten-rectangle.png" alt="TEN Protocol" style="max-width: 600px; width: 100%; height: auto;">
 </div>
 
 ## Confidential Smart Contracts for Ethereum

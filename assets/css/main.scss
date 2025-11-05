@@ -145,7 +145,7 @@ body::before {
 
 /* Buttons */
 .btn--primary {
-  background: linear-gradient(135deg, #7846ff 0%, #46b9ff 100%);
+  background: #000;
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -153,13 +153,15 @@ body::before {
   transition: all 0.3s ease;
   display: inline-block;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(120, 70, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000;
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 40px rgba(120, 70, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   color: white;
+  background: #333;
 }
 
 /* Content Typography */
