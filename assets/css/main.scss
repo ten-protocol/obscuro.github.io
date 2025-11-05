@@ -96,10 +96,12 @@ body::before {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 3rem;
   margin: 2rem auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   animation: fadeInUp 0.6s ease-out;
+  max-width: 900px;
+  word-wrap: break-word;
 }
 
 @keyframes fadeInUp {
@@ -170,12 +172,29 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #1a1a1a;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 p {
   line-height: 1.8;
   color: #4a4a4a;
   margin-bottom: 1.5rem;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Ensure all text content wraps properly */
+.page__content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Fix for long words and URLs */
+.page__content * {
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 blockquote {
@@ -218,11 +237,28 @@ img {
   
   .page {
     margin: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
+    max-width: calc(100vw - 2rem);
   }
   
   .sidebar {
-    background: rgba(15, 15, 20, 0.98);
+    background: rgba(255, 255, 255, 0.98);
+  }
+  
+  #main {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 1rem;
+    margin: 0.5rem;
+    max-width: calc(100vw - 1rem);
+  }
+  
+  #main {
+    padding: 0 0.5rem;
   }
 }
 
