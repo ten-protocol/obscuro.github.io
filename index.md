@@ -16,8 +16,6 @@ classes: wide
   </div>
 </div>
 
-## Confidential Smart Contracts for Ethereum
-
 TEN brings privacy to Ethereum smart contracts without compromising on functionality or decentralization. Built as an Ethereum Layer 2, TEN ensures that your transactions and contract states remain encrypted and confidential.
 
 ### Key Features

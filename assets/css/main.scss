@@ -55,6 +55,13 @@ body::before {
   z-index: 1000;
 }
 
+/* Main Content Container */
+#main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
 /* Enhanced Sidebar */
 .sidebar {
   background: rgba(255, 255, 255, 0.95);
