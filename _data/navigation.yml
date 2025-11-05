@@ -27,5 +27,5 @@ pages:
         url: /obscuro-whitepaper/amalgamated.html
   - title: About
     children:
-      - title: Ten Home
+      - title: TEN Home
         url: https://ten.xyz

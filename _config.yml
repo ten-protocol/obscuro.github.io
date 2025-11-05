@@ -4,11 +4,11 @@ minimal_mistakes_skin: "default"
 
 # Site Settings
 locale: "en-UK"
-title: "Ten"
+title: "TEN"
 subtitle: "Ethereum-equivalent confidential smart contract L2 network."
-description: "Ten is an Ethereum-equivalent confidential smart contract L2 network."
+description: "TEN is an Ethereum-equivalent confidential smart contract L2 network."
 url: "https://ten.xyz"
-name: "Ten"
+name: "TEN"
 repository: "ten-protocol/obscuro.github.io"
 search: true
 logo: "/assets/images/favicon-32x32.png"
