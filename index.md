@@ -10,7 +10,7 @@ classes: wide
     <a href="/obscuro-whitepaper/abstract.html" class="btn--primary">
       Read Whitepaper →
     </a>
-    <a href="assets/images/obscuro-whitepaper-0-10-0.pdf" class="btn--primary" style="margin-left: 1rem; background: white; border: 2px solid #000; color: #000;">
+    <a href="assets/images/ten-whitepaper-1-0-0.pdf" class="btn--primary" style="margin-left: 1rem; background: white; border: 2px solid #000; color: #000;">
       Download PDF ↓
     </a>
   </div>
