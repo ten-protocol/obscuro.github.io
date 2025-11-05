@@ -34,8 +34,10 @@ defaults:
       sidebar:
         nav: "pages"
       layout: single
-      author_profile: true
+      author_profile: false
       strip_title: true
+      classes: wide
+      toc: false
 
 footer:
   links:

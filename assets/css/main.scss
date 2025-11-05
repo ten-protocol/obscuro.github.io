@@ -7,12 +7,241 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/* Set base font size for the site. */
+/* Modern Typography and Base Styles */
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-/* Increase font size for nav bar from 0.75em default, and for title from 0.625em default */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  min-height: 100vh;
+}
+
+/* Animated Background Effect (inspired by Boundless) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 70, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(70, 120, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(200, 70, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Reading Progress Bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #7846ff 0%, #46b9ff 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+/* Enhanced Sidebar */
+.sidebar {
+  background: rgba(15, 15, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .sidebar p, .sidebar li, .site-subtitle {
-  font-size: 0.9em
+  font-size: 0.9em;
+}
+
+.nav__list .nav__items {
+  margin: 0;
+}
+
+.nav__list a {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.nav__list a:hover {
+  background: rgba(120, 70, 255, 0.1);
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.nav__list .active a {
+  background: linear-gradient(90deg, rgba(120, 70, 255, 0.2), rgba(70, 120, 255, 0.2));
+  color: #fff;
+  border-left: 3px solid #7846ff;
+}
+
+/* Main Content Area */
+.page {
+  background: rgba(20, 20, 25, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section for Homepage */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7846ff 0%, #46b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn--primary {
+  background: linear-gradient(135deg, #7846ff 0%, #46b9ff 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(120, 70, 255, 0.3);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(120, 70, 255, 0.4);
+  color: white;
+}
+
+/* Content Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+p {
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+blockquote {
+  border-left: 4px solid #7846ff;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(120, 70, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Code Blocks */
+pre {
+  background: rgba(10, 10, 15, 0.9);
+  border: 1px solid rgba(120, 70, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+code {
+  background: rgba(120, 70, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #46b9ff;
+}
+
+/* Images */
+img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .page {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    background: rgba(15, 15, 20, 0.98);
+  }
+}
+
+/* Smooth Transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Footer Enhancement */
+.page__footer {
+  background: rgba(10, 10, 15, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Link Styles */
+a {
+  color: #7846ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #46b9ff;
+  text-decoration: underline;
 }
