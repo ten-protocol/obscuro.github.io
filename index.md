@@ -3,6 +3,65 @@ layout: splash
 classes: wide
 ---
 
+<div class="parallax-logos">
+  <div class="parallax-logo"></div>
+  <div class="parallax-logo"></div>
+  <div class="parallax-logo"></div>
+  <div class="parallax-logo"></div>
+  <div class="parallax-logo"></div>
+  <div class="parallax-logo"></div>
+</div>
+
+<script>
+console.log('Parallax script loaded');
+
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM ready, looking for logos...');
+  const logos = document.querySelectorAll('.parallax-logo');
+  console.log('Found logos:', logos.length);
+  
+  // Parallax scroll effect with disintegration
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    // Make effects happen much sooner - use just first 3 screen heights
+    const maxScrollForEffects = windowHeight * 3;
+    const scrollProgress = Math.min(scrollY / maxScrollForEffects, 1);
+    
+    logos.forEach((logo, index) => {
+      // Much faster movement speeds
+      const speed = (index + 1) * 1.2; // Increased from 0.3 to 1.2
+      const offsetY = scrollY * speed;
+      
+      // Blur starts immediately and gets intense quickly
+      const blur = scrollProgress * 15; // Increased from 5 to 15
+      
+      // Create a subtle fade-in then fade-out effect
+      let opacity;
+      if (scrollProgress < 0.3) {
+        // Fade in during first 30% of scroll
+        opacity = 0.15 + (scrollProgress / 0.3) * 0.25; // From 0.15 to 0.4
+      } else {
+        // Fade out during remaining 70% of scroll
+        opacity = Math.max(0.4 - ((scrollProgress - 0.3) / 0.7) * 0.4, 0); // From 0.4 to 0
+      }
+      
+      // Scale shrinks more dramatically
+      const scale = Math.max(1 - scrollProgress * 0.8, 0.2); // More shrinkage
+      
+      // Faster rotation
+      const rotation = scrollProgress * 720; // 2 full rotations instead of 1
+      
+      logo.style.transform = `translateY(${offsetY}px) scale(${scale}) rotate(${rotation}deg)`;
+      logo.style.filter = `invert(1) opacity(${opacity}) blur(${blur}px)`;
+    });
+  });
+});
+</script>
+
+
 # TEN
 **Confidential Smart Contracts for Ethereum**
 
