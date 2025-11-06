@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: splash
 classes: wide
 ---
 
@@ -10,10 +10,11 @@ classes: wide
 > 1. 天 (Japanese) Heaven; sky; the celestial;
 > 2. **T**he **E**ncrypted **N**etwork
 
-V1.0.0, November 2025 
+V1.0.0, November 2025
+
 _Note: Some diagrams will refer to the former name (Obscuro)_
 
-James Carlyle, Tudor Malene, Cais Manai, Neal Shah, Gavin Thomas, Roger Willis; with significant additional [contributors](./appendix#contributors).
+James Carlyle, Tudor Malene, Cais Manai, Neal Shah, Gavin Thomas, Roger Willis; with significant additional [contributors](#contributors).
 
 
 # Abstract
@@ -72,10 +73,10 @@ In this section, we enumerate the key challenges we faced when designing the TEN
 - Another critical challenge for this protocol is the prevention of MEV. Because user transactions and execution are not visible to TEN nodes, one might naively assume that this problem is solved. Unfortunately, that is not strictly true since aggregators might gain useful information through side-channels and use that to extract value. For example, an aggregator might own some accounts and submit transactions to them in critical moments and then query for results. TEN addresses this by introducing delays in key moments to prevent aggregators from performing replay-attacks which can generally be used for side-channels.
 
 
-- A privacy-preserving platform should consider illegal usage and design mechanisms to help application developers avoid and prevent it. An important insight in this direction is that the value of confidentiality decays over time, to the point where transactions may just be of historical interest. For many transactions involving value, it is critical that they are not public when processed and cannot be front-run, but for others, they are price-sensitive for a longer period. TEN uses this insight and implements a flexible policy for delayed transaction revelation. The knowledge that transactions become public in the future is a deterrent for users to engage in criminal behaviour because law-enforcement agencies will eventually catch up. [Alternative](./appendix#alternative-revelation-options) options have been considered.
+- A privacy-preserving platform should consider illegal usage and design mechanisms to help application developers avoid and prevent it. An important insight in this direction is that the value of confidentiality decays over time, to the point where transactions may just be of historical interest. For many transactions involving value, it is critical that they are not public when processed and cannot be front-run, but for others, they are price-sensitive for a longer period. TEN uses this insight and implements a flexible policy for delayed transaction revelation. The knowledge that transactions become public in the future is a deterrent for users to engage in criminal behaviour because law-enforcement agencies will eventually catch up. [Alternative](#alternative-revelation-options) options have been considered.
 
 
-- One crucial challenge of such a system is ensuring that some catastrophic event cannot leave all the value locked. The mechanism that prevents this is covered in the [Threat-Model analysis](./threat-model).
+- One crucial challenge of such a system is ensuring that some catastrophic event cannot leave all the value locked. The mechanism that prevents this is covered in the [Threat-Model analysis](#threat-model).
 
 
 - High transaction fees are one of the main barriers to entry for Ethereum. TEN addresses this by introducing a novel approach to calculate fees based on the actual costs of the running nodes.
@@ -140,7 +141,7 @@ On the bottom right, this diagram also depicts the state of a simple rollup chai
 ## L1 Network
 On the L1 network there are several regular Ethereum contracts, referred to as Management Contracts.
 
-Note: the L1 design is covered in more detail in [L1 Contracts](./l1-contracts).
+Note: the L1 design is covered in more detail in [L1 Contracts](#l1-contracts).
 
 ### Network Management
 This contract is the gatekeeper for the protocol. Any TEN node wishing to join the network will have to interact with this contract and prove it is valid. 
@@ -161,13 +162,13 @@ The goal of the L2 design is to create a fair, permissionless, and decentralised
 
 All TEN nodes have to go through the attestation process with the Network Management contract before receiving the shared secret and participating.
 
-Note: the shared secret is covered in the [cryptography section](./cryptography).
+Note: the shared secret is covered in the [cryptography section](#cryptography).
 
 ## Aggregators and Verifiers
 
 Two different types of nodes participate in the L2 network: _Aggregators_ and _Verifiers_.
 
-**_Aggregators_** are nodes that submit rollups to the L1 network. Any party can become an Aggregator by staking an amount determined by governance and running a node with a valid TEE that has been attested by the Network Management Contract. The stake should deter Aggregators from releasing a rollup with an illegal state or from submitting a rollup built on top of a non-canonical rollup. An Aggregator publishes a rollup following the POBI protocol, which should not conflict with rollups published by other Aggregators (see [later section](./consensus)), and if they do, the Aggregator only receives partial rewards.
+**_Aggregators_** are nodes that submit rollups to the L1 network. Any party can become an Aggregator by staking an amount determined by governance and running a node with a valid TEE that has been attested by the Network Management Contract. The stake should deter Aggregators from releasing a rollup with an illegal state or from submitting a rollup built on top of a non-canonical rollup. An Aggregator publishes a rollup following the POBI protocol, which should not conflict with rollups published by other Aggregators (see [later section](#consensus---proof-of-block-inclusion)), and if they do, the Aggregator only receives partial rewards.
 
 **_Verifiers_** are lightweight L2 nodes that subscribe to the published rollups, making them available to users. Because rollups are published on the L1, anyone can extract the rollup data, and run a Verifier to rebuild the L2 state inside a TEE.
 
@@ -292,7 +293,7 @@ All successful decentralised solutions need a robust incentive mechanism to keep
 
 Compared to a typical L1 protocol, there is an additional complexity to consider. In an L1 like Bitcoin or Ethereum, once a node gossips a valid block, all the other nodes are incentivised to use it as a parent because they know everyone does that too. In an L2 decentralised protocol like POBI, there is an additional step: the publication of the rollup to L1, which can fail for multiple reasons. Furthermore, the incentive design must also consider the problem of front-running the actual rollup. For a rollup to be final, it has to be added to an L1 block, which is where an L1 miner or staker can attempt to claim the reward that rightfully belongs to a different L2 node.
 
-Note that rollup finality will be covered extensively in the [TEN - Ethereum interaction section](./ten-ethereum-interaction).
+Note that rollup finality will be covered extensively in the [TEN - Ethereum interaction section](#ten-and-ethereum-interaction).
 
 The high-level goal is to keep the system functioning as smoothly as possible and resist random failures or malicious behaviour while not penalising TEN nodes for not being available. We believe that penalties for availability increase the barrier of entry, and thus make the system centralised over the long term. 
 
@@ -583,7 +584,7 @@ The rule is that the L2 rollup that includes the transaction that credits the TE
 The interaction is shown in the following diagram:
 ![user registration](https://raw.githubusercontent.com/ten-protocol/ten-whitepaper/refs/heads/main/images/user-registration.png)
 
-See also the [Data model](./appendix#data-model) section and the following dependency diagram.
+See also the [Data model](#data-model) section and the following dependency diagram.
 ![deposit process](https://raw.githubusercontent.com/ten-protocol/ten-whitepaper/refs/heads/main/images/deposit-process.png)
 
 _Note: The deposit L2 transaction cannot be fully encrypted because the Aggregator has to decide whether to include it in the current rollup based on the chances of the L1 block it depends on being final._
@@ -625,7 +626,7 @@ The above rules will, in practice, prevent this type of attack, and if it happen
 The network governance model allows any user to trigger the _forced finality procedure_ by staking or voting on one of the competing rollup chains. The minimum stake is a percentage of the amounts being withdrawn on that branch, set through governance. Backers of the other chain are obliged to stake a similar or higher value to compete. The decision process is run as an auction, where the party that loses also loses their bids. When concluded, all rollups on that chain are considered final, and withdrawals are executed.
 
 ### Withdrawals protocol
-Each TEE signed rollup contains a plaintext list of withdrawal requests. See: [Data Model](./appendix#data-model).
+Each TEE signed rollup contains a plaintext list of withdrawal requests. See: [Data Model](#data-model).
 
 The Bridge contract keeps track of these requests and executes them at different times, based on the finality status of that rollup.
 
@@ -685,7 +686,7 @@ A write-level hack could happen if an attacker extracts the enclave key and sign
 
 _Note: This type of attack is viewed as the main threat to the protocol and thus handled explicitly._
 
-The mechanism to prevent this attack is described in detail in the [Withdrawals](./ten-ethereum-interaction#withdrawals) section.
+The mechanism to prevent this attack is described in detail in the [Withdrawals](#withdrawals) section.
 
 The high level goal of the protections is to transform such an attack into a liveness attack on the withdrawal function.
 
@@ -780,7 +781,7 @@ Publishing with insufficient gas is, in effect, punished by the protocol because
 ## Competing L1 Blockchain Forks
 In theory, different L2 Aggregators could be connected to L1 nodes that have different views of the L1 ledger. This will be visible in the L2 network, as gossiped rollups pointing to L1 blocks from the two forks. Each Aggregator will have to make a bet and continue working on the L1 fork that it considers to be legitimate, the same behaviour as any L1 node.
 
-This is depicted in [Rollup Data Structure](./rollup-data-structure).
+This is depicted in [Rollup Data Structure](#rollup-data-structure).
 
 If it proves that the decision an Aggregator made was wrong, it has to roll back the state to a checkpoint and replay the winning rollups.
 
