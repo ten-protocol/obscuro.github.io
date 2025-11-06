@@ -1,0 +1,321 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TEN and Ethereum Interaction - TEN</title>
+<meta name="description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_UK">
+<meta property="og:site_name" content="TEN">
+<meta property="og:title" content="TEN and Ethereum Interaction">
+<meta property="og:url" content="http://localhost:4000/obscuro-whitepaper/ten-ethereum-interaction.html">
+
+
+  <meta property="og:description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/obscuro-whitepaper/ten-ethereum-interaction.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "TEN",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom Scripts and Styles -->
+<script src="/assets/js/custom.js" defer></script>
+
+<!-- Custom Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/favicon-32x32.png" alt="TEN"></a>
+        
+        <a class="site-title" href="/">
+          TEN
+          <span class="site-subtitle">The Final Network - a TEE-native encrypted Ethereum Layer 2 for the new internet.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/assets/images/ten-whitepaper-1-0-0.pdf">Download PDF</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TEN and Ethereum Interaction">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">TEN and Ethereum Interaction
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>TEN is a confidential extension to Ethereum, and thus assets have to move freely between the two networks.</p>
+
+<p>All sidechains and L2 solutions have developed solutions to the mismatches between the different models of the two networks, and typically there is a bridge contract that safeguards assets.
+The difference between sidechains and L2 solutions is that mismatches are more significant for sidechains because they have their own finality and security mechanisms, and thus the bridge logic is either very complex or centralised.</p>
+
+<h2 id="deposits">Deposits</h2>
+<p>The user deposits supported ERC tokens into the well-known address of the Bridge contract, and once the transaction is successfully added to a block, the TEN-enabled wallet automatically creates an L2 transaction, including proof of the L1 transaction. The exact amount is credited with wrapped tokens on the user’s account on TEN.</p>
+
+<p>The fact that the finality of L1 transactions is probabilistic makes crediting the L2 account not straightforward. Most solutions solve this problem by waiting for a confirmation period before crediting the account. TEN takes a different approach and introduces a dependency mechanism between the L2 rollup and the L1 blocks.</p>
+
+<p>The rule is that the L2 rollup that includes the transaction that credits the TEN account has a hard dependency on an L1 block, and the Bridge contract enforces that it is one of the ancestors of the current block. If the L1 deposit transaction is no longer in the canonical L1 chain, it automatically invalidates the rollup that contains the L2 deposit transaction, and the L1 deposit will only be recognised as the basis for an L2 rollup credit transaction when it has been included in the canonical L1 chain.</p>
+
+<p>The interaction is shown in the following diagram:
+<img src="/obscuro-whitepaper/images/user-registration.png" alt="user registration" /></p>
+
+<p>See also the <a href="./appendix#data-model">Data model</a> section and the following dependency diagram.
+<img src="/obscuro-whitepaper/images/deposit-process.png" alt="deposit process" /></p>
+
+<p><em>Note: The deposit L2 transaction cannot be fully encrypted because the Aggregator has to decide whether to include it in the current rollup based on the chances of the L1 block it depends on being final.</em></p>
+
+<h2 id="withdrawals">Withdrawals</h2>
+<p>The high-level requirement for the withdrawal function is simple: allow TEN users to move assets back into the Ethereum network. The problem is that this is where the most significant threat against such a solution lies because there might be a large amount of locked value.</p>
+
+<p>The challenge is to implement this functionality in a decentralised way by defining a protocol and economic incentives.</p>
+
+<p>Due to the sensitivity of this function, many sidechains and L2 solutions rely on multi-signature technology to control the release of funds. Optimistic Rollups rely on a challenge mechanism during a long waiting period before releasing funds, powered by economic incentives.</p>
+
+<p>TEN uses TEE technology, but it cannot leverage it for this aspect because of our threat model. The Bridge Contract could release funds based on a signature from an attested TEE if it were invulnerable, but since that is not the case, the solution is to use economic incentives on top of the POBI protocol.</p>
+
+<h3 id="rollup-finality">Rollup Finality</h3>
+<p>The general rule is that withdrawals can be processed only when a rollup is <em>final</em>. This means this is the protocol for the finality of the TEN chain relative to the Ethereum chain.</p>
+
+<h4 id="rule-1---the-standard-delay-period">Rule 1 - The standard delay period</h4>
+<p>In the usual case, a rollup from the canonical chain (see POBI protocol) is final if a standard number of blocks corresponding to a period of 1 day has passed from the Ethereum block where it was published.</p>
+<ul>
+  <li>Note 1: The period is measured in Ethereum blocks because the delay is stable on average between blocks.</li>
+  <li>Note 2: The reason for this period is to give honest nodes the chance to “challenge” the rollup if it is malicious.</li>
+  <li>Note 3: The period is inverse to the number of L2 nodes. It should be long enough to give honest participants the chance to react and publish in the face of aggressive censorship attempts against them, but short enough not to degrade the user experience. We estimate that once the network reaches a healthy number of nodes, we can reduce it to 50-100 blocks (~ 10 minutes).</li>
+</ul>
+
+<h4 id="rule-2---the-competing-forks">Rule 2 - The competing forks</h4>
+<p>Assuming the period chosen at rule #1 is enough, the only possible write attack performed by an actor that could hack the TEE manifests as multiple parallel forks at least two rollups deep. This is because all valid TEEs run the same attested code that chooses the same canonical chain from the rollups published in the L1 block presented as proof. If the Management Contract notices multiple forks, the rule is that finality is suspended on all forks, thus, withdrawals are suspended. Likewise, if one of the forks becomes inactive, the rule is that all rollups on the alive fork become final once a standard period of 1 day has passed from the last L1 block that contained a rollup published on the inactive branch.</p>
+
+<ul>
+  <li>Note1: This rule degrades a <em>write-attack</em> into a Denial of Service attack on the withdrawal function.</li>
+  <li>Note2: Assuming there are honest participants, the actual canonical ledger keeps growing, including user transactions.</li>
+  <li>Note3: The attacker has to spend Ethereum gas to keep the malicious fork alive.</li>
+</ul>
+
+<h4 id="rule-3---addressing-the-dos-on-finality">Rule 3 - addressing the DoS on finality</h4>
+<p>Since rule #2 transforms any attack into a DoS attack, the protocol has some mechanisms to keep user experience satisfactory even in the extreme case of a TEE hack.</p>
+
+<ol>
+  <li>
+    <p>The ultimate backstop is the “Attestation Constraints” rules. Forks in the canonical chain are clearly a breach of protocol, caused either by a TEE hack or a protocol hack. This is ultimately resolved with software or, at worst, hardware updates. Once the management Contract forces an upgrade, the attacker will no longer be able to create malicious rollups, and thus the fork becomes inactive, and finality resumes on the valid fork.</p>
+  </li>
+  <li>
+    <p>For any users with an L2 node, it is obvious which is the canonical chain, as it is the one that does not fail. Market makers operating on both L1 and L2 can step in and absorb the withdrawal requests of users at a slight discount without taking any actual risk.</p>
+  </li>
+</ol>
+
+<p>The above rules will, in practice, prevent this type of attack, and if it happens, offer a practical solution for users. In addition, the protocol has yet another backstop to address the extreme case of a very persistent attacker.</p>
+
+<p>The network governance model allows any user to trigger the <em>forced finality procedure</em> by staking or voting on one of the competing rollup chains. The minimum stake is a percentage of the amounts being withdrawn on that branch, set through governance. Backers of the other chain are obliged to stake a similar or higher value to compete. The decision process is run as an auction, where the party that loses also loses their bids. When concluded, all rollups on that chain are considered final, and withdrawals are executed.</p>
+
+<h3 id="withdrawals-protocol">Withdrawals protocol</h3>
+<p>Each TEE signed rollup contains a plaintext list of withdrawal requests. See: <a href="./appendix#data-model">Data Model</a>.</p>
+
+<p>The Bridge contract keeps track of these requests and executes them at different times, based on the finality status of that rollup.</p>
+
+<p>The withdrawal process is indicated in the following diagram:
+<img src="/obscuro-whitepaper/images/withdrawal-process.png" alt="withdrawal process" /></p>
+
+<h2 id="ten-public-events">TEN public events</h2>
+
+<p>Ethererum application developers can use a confidential L2 like TEN for some jobs that are not possible otherwise.</p>
+
+<p>For example, an L1 smart contract organises a fair lottery that needs a reliable random number generator that the miners cannot game.</p>
+
+<p>Another example is publishing the result of a poker game played inside TEN, which the L1 contract can use to make a payment or update the tournament results.</p>
+
+<p>The challenge for achieving this functionality is that the data originating in L2 has to be final.
+Luckily TEN has this mechanism already in place for processing withdrawals.
+Applications running inside TEN can emit special types of events called <em>Public Events</em>, which the OVM will add in plaintext into a dedicated data structure in the rollup.
+The _Rollup Contract _ first processes the rollup, and then once they reach finality, it exposes these events to external contracts.</p>
+
+<p>Note: The fair lottery can be implemented in two steps to avoid any possible influence. The implementation can use the submarine technique and first publish the hash of that number in an event, and a few blocks later publish the actual number in a different event.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/tenprotocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ten-protocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 TEN. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

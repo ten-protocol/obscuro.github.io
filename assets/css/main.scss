@@ -230,20 +230,21 @@ body {
 
 /* Make splash layout content match header width */
 .layout--splash .page__inner-wrap {
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 2rem;
+  box-sizing: border-box;
 }
 
-/* Ensure splash content spans full available width */
+/* Ensure splash content matches container width */
 .layout--splash .page__content {
-  max-width: none;
   background: white;
-  padding: 4rem;
+  padding: 6rem 3rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 /* Also ensure the page wrapper has proper stacking */
@@ -262,8 +263,9 @@ body {
 
 .masthead__inner-wrap {
   padding: 0 2rem !important;
-  max-width: 1280px !important;
+  max-width: 1024px !important;
   margin: 0 auto !important;
+  box-sizing: border-box !important;
 }
 
 /* Override greedy-nav background */

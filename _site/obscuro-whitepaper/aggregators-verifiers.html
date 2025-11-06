@@ -1,0 +1,285 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>L2 Nodes - TEN</title>
+<meta name="description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_UK">
+<meta property="og:site_name" content="TEN">
+<meta property="og:title" content="L2 Nodes">
+<meta property="og:url" content="http://localhost:4000/obscuro-whitepaper/aggregators-verifiers.html">
+
+
+  <meta property="og:description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/obscuro-whitepaper/aggregators-verifiers.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "TEN",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom Scripts and Styles -->
+<script src="/assets/js/custom.js" defer></script>
+
+<!-- Custom Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/favicon-32x32.png" alt="TEN"></a>
+        
+        <a class="site-title" href="/">
+          TEN
+          <span class="site-subtitle">The Final Network - a TEE-native encrypted Ethereum Layer 2 for the new internet.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/assets/images/ten-whitepaper-1-0-0.pdf">Download PDF</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="L2 Nodes">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">L2 Nodes
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>There are two categories of nodes in the TEN network:</p>
+
+<h4 id="aggregator-nodes">Aggregator Nodes</h4>
+<p>Aggregators are the TEN nodes whose TEEs are in possession of the <em>shared secret</em> and can submit rollups to the L1. To gain this privilege, these nodes must pledge a stake.</p>
+
+<p>End users send encrypted transactions to any registered Aggregators who then gossip the transactions. Every round, one of the Aggregators publishes the transaction in a rollup.</p>
+
+<p>Aggregators have the following functions:</p>
+<ul>
+  <li>Integrate with an L1 node to monitor published blocks and to submit rollups.</li>
+  <li>Gossip with the other aggregators registered in the Management Contract.</li>
+  <li>Interact with the TEE module of the node:
+    <ul>
+      <li>Submit user encrypted transactions.</li>
+      <li>Submit signed user balance requests and encrypted responses back to the users.</li>
+      <li>Submit proofs of block inclusion and receive signed rollups.</li>
+    </ul>
+  </li>
+  <li>Store data encrypted by the TEE and make it available when the TEE requests it. Act as an encrypted database.</li>
+</ul>
+
+<p>Note that logically a node is split into two main sections:</p>
+<ul>
+  <li>The section that is controlled by the node operator</li>
+  <li>The TEE, which is attested to the Management contract and is in effect controlled by the governance body of TEN.</li>
+</ul>
+
+<p>These are the steps to become an Aggregator.</p>
+<ul>
+  <li>Register with the L1 Network Management contract and pay a significant stake in the TEN token. The stake has multiple roles. The first one is to penalise Aggregators who attempt to hack the protocol, and second is for the Aggregators to buy into the ecosystem, so that they will make an effort to keep it running smoothly.</li>
+  <li>Set up a server with a valid, unaltered and up-to-date TEE and provide an attestation to the Management Contract.</li>
+  <li>On seeing this request to join the network published to the L1, another registered TEE will share the shared secret.</li>
+  <li>Once in possession of the secret, the TEE can start processing all the L2 transactions that are stored on the L1 blockchain and build the state.</li>
+  <li>Once this is completed, the new Aggregator can join the gossip with the other Aggregators and participate in the lottery for producing rollups.</li>
+  <li>Some end users will send encrypted instructions directly to this server, and it will gossip these with other nodes in the L2 network.</li>
+  <li>As Aggregators process messages, they maintain the L2 state in the encrypted TEE memory and then journal encrypted data in a local database. If they are the winner of the round they can create a valid rollup and publish it to L1.</li>
+  <li>All Aggregators keep track of the blocks submitted to the Management Contract to make sure they are up-to-date with the source of truth.</li>
+  <li>The first Aggregator to register has a special role, as it has to create the <em>Shared secret</em>.</li>
+</ul>
+
+<p>Note: Each Aggregator needs an ETH balance on the L1 to pay for the submission of the rollup.</p>
+
+<p>The steps to register as an Aggregator are shown in the following diagram:
+<img src="/obscuro-whitepaper/images/aggregator-stake.png" alt="aggregator staking" /></p>
+
+<h4 id="verifier-nodes">Verifier Nodes</h4>
+<p>Verifiers are TEE-equiped TEN nodes in possession of the shared secret and play a strong role in consensus security. They are configured differently and have not pledged the stake nor are they part of the Aggregator gossip network. To receive the L2 transactions, they monitor the L1 network and calculate the state based on the rollups submitted there.</p>
+
+<p>End users can interact with either Aggregators or Verifiers to receive events on submitted transactions or query their accounts’ balance. Anyone can become a Verifier with minimal cost if they have compatible hardware.</p>
+
+<p>Allowing these two categories lowers the bar for participation, thus making the network more robust and decentralised since more independent parties guard the shared secret and can react in the face of an attack.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/tenprotocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ten-protocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 TEN. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

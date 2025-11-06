@@ -1,0 +1,390 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Detailed Technical Design - TEN</title>
+<meta name="description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_UK">
+<meta property="og:site_name" content="TEN">
+<meta property="og:title" content="Detailed Technical Design">
+<meta property="og:url" content="http://localhost:4000/obscuro-whitepaper/detailed-design.html">
+
+
+  <meta property="og:description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/obscuro-whitepaper/detailed-design.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "TEN",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom Scripts and Styles -->
+<script src="/assets/js/custom.js" defer></script>
+
+<!-- Custom Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/favicon-32x32.png" alt="TEN"></a>
+        
+        <a class="site-title" href="/">
+          TEN
+          <span class="site-subtitle">The Final Network - a TEE-native encrypted Ethereum Layer 2 for the new internet.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/assets/images/ten-whitepaper-1-0-0.pdf">Download PDF</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Detailed Technical Design">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Detailed Technical Design
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>This section describes key TEN component designs.</p>
+
+<h2 id="cryptography">Cryptography</h2>
+<p>This section covers the various cryptographic techniques used by TEN.</p>
+
+<h3 id="master-seed">Master Seed</h3>
+<p>CPU manufacturers provision every TEE with one or multiple keys, the <em>Enclave Key</em> (EK). These keys are used for digitally signing messages and identifying a TEE. They are also used for encrypting data that only that particular hardware TEE can decrypt. To achieve the goals of a collaborative, decentralised network like TEN, all the TEEs have to work on the same set of transactions, which means they must all decrypt them.</p>
+
+<p>The first enclave, called the <em>Genesis Enclave</em>, generates a 256bit random byte array called the <em>Master Seed</em> inside the encrypted memory space. It encrypts this seed with the <em>EK</em> and sends it to the Management Contract to be stored there, as well as storing it locally on the host server.</p>
+
+<h3 id="sharing-the-master-seed">Sharing the Master Seed</h3>
+<p>After proving their attestation, subsequent nodes receive that secret <em>Master Seed</em> encrypted with their key. The medium over which they receive the data is the Management Contract to ensure maximum data availability.</p>
+
+<p>Before obtaining the shared secret, the L2 nodes must attest that they are running a valid version of the contract execution environment on a valid CPU.</p>
+
+<p><em>Note: The solution assumes that attestation verification can be implemented efficiently as part of the  Management Contract. This is the ideal solution since it makes the contract the root of trust for the L2 network.</em></p>
+
+<p>The sequence for node registration is shown in the following diagram:
+<img src="./images/node-registration.png" alt="node registration" /></p>
+
+<p>An L2 node invokes a method on the Management Contract to submit their attestation, verifying it and saving this request. Then, another L2 node (which already holds the secret key inside its enclave) responds by updating this record with the shared secret encrypted using the public key of the new TEE. Whichever existing L2 node replies first, signed by the enclave to guarantee knowledge of the secret, receives a reward.</p>
+
+<p><em>Note: This solves several problems; the Management Contract provides a well-known central registration point on the Ethereum network, which can store the L2 shared secret in public with very high availability, and existing L2 nodes are compensated for their infrastructure and L1 gas costs to onboard new nodes.</em></p>
+
+<h3 id="generating-keys">Generating Keys</h3>
+<p>The TEEs use the shared secret to generate further asymmetric and symmetric keys used by users to encrypt transactions and by the enclaves themselves to encrypt the content of the rollups.</p>
+
+<p>Each enclave uses this master entropy to generate additional keys deterministically:</p>
+
+<ol>
+  <li>A public/private key pair is used as the identity of the network. The public key is published to L1 and used by clients to encrypt the signed TEN transactions and is referred to as <em>TEN_Public_Key</em></li>
+  <li>A set of symmetric keys used by the TEEs to encrypt the transactions which will stored on the L1 blockchain in rollups.</li>
+</ol>
+
+<p><em>Note: When submitting a rollup, each enclave signs it with the key found in their attestation (the _AK</em>)._</p>
+
+<h3 id="transaction-encryption">Transaction Encryption</h3>
+<p>One of the explicit design goals of TEN is to help application developers achieve their privacy requirements while giving them the tooling to disincentivise their users from using the application for illegal behaviour such as money laundering.</p>
+
+<p>When deploying a contract to TEN, the developer has to choose one of the predefined revealing options:</p>
+
+<ul>
+  <li><em>XS</em> - 12 seconds (1 block)</li>
+  <li><em>S</em> - 1 hour (3600/12 = 300 blocks)</li>
+  <li><em>M</em> - 1 day (24 * 3600/12 = 7200 blocks)</li>
+  <li><em>L</em> - 1 month</li>
+  <li><em>XL</em> - 1 year</li>
+</ul>
+
+<p><em>Note: These periods are counted in L1 blocks and are indicative.</em></p>
+
+<p>One of these options is chosen by default for applications that do not explicitly specify one. Based on the chosen period, transactions submitted to that application can be decrypted by anyone after that time delay.</p>
+
+<p>The protocol deterministically derives 5 symmetric encryption keys for each rollup, derived from the master seed, the reveal option, the running counter for that option, and the block height, such that all TEEs in possession of the master secret can calculate the same encryption key.</p>
+
+<p>For example, application <em>FooBar</em> has a reveal setting of <em>M</em> (1 day). Alice submits a transaction (encrypted with the <em>TEN_Public_Key</em>) <em>Tx1</em> on the 1st of February and another <em>Tx2</em> on the 2nd of February. Inside the TEE, they are decrypted and executed. When the rollup is generated, all transactions sent to applications with the same reveal option are bundled together by the Aggregator, compressed, and encrypted with the <em>Encryption_Key(Master_Seed, Reveal_Option, Counter, Block_Height)</em>.</p>
+
+<p>The transaction blob is formed by concatenating all the encrypted intervals without any delimiter to prevent information from leaking. Then, separately from the transaction blob, a data structure is created containing each option’s start (index) position. This map is also added to the rollup after being encrypted with a separate key that is not revealed.</p>
+
+<p>This is depicted in the following diagram:
+<img src="./images/encryption-options.png" alt="encryption options" /></p>
+
+<p><em>Note that the predefined reveal periods are preferable to each application choosing a custom period, as it simplifies computation and the number of keys that have to be managed.</em></p>
+
+<h3 id="revelation-mechanism">Revelation Mechanism</h3>
+<p>The mechanism described above ensures that TEN transactions are encrypted with different keys, which can be revealed independently.</p>
+
+<p>The other piece of the puzzle is the mechanism that controls the actual reveal process. On a high level, the platform needs a reliable way to measure the time that cannot be gamed by a malicious host owner.</p>
+
+<p>The L1 blocks can be used as a reliable measure of average time. The rule is that after enough blocks have been added on top of the block that includes the rollup with the encrypted transactions, any user can request the encryption key and the position of the transactions they are entitled to view from the TEE of any TEN node.</p>
+
+<p>A malicious node operator wanting to have a peek at transactions before the designated time has passed can try to <em>fast-forward</em> time by creating an Ethereum fork and mining blocks with well-chosen timestamps such that difficulty keeps decreasing.</p>
+
+<p>The solution to this problem is straightforward. TEN TEEs fully understand the Ethereum protocol and receive all L1 blocks as part of the POBI protocol, which allows them to verify that the blocks are valid, but they cannot know wheter this is the canonical Ethereum chain or a malicious fork designed to fast-forward time. To address this, TEN hard-codes a minimum difficulty lower than the average network difficulty for the last year, but much higher than any single actor can achieve. This will prevent the node operator from speeding up time.</p>
+
+<h3 id="cryptographic-algorithms">Cryptographic Algorithms</h3>
+<p>TEN makes the same choices as Ethereum for hashing and signing algorithms and uses the same elliptic curve.</p>
+
+<p>Communication with TEEs and the encryption algorithms are not yet defined.</p>
+
+<p><em>Note: There might be a more efficient way to achieve the same high-level goals, and we are considering different other options.</em></p>
+<h2 id="state">State</h2>
+<p>TEN is an account-based L2 decentralised ledger system similar to the L1 Ethereum blockchain, where the state is calculated independently by each node based on the canonical list of transactions and stored as a <em>Patricia Trie</em> in each rollup. Each node processes all prior transactions to establish the current state (full sync), and optimised sync methods (e.g. fast sync) will likely be supported. One significant difference is that the account balances can only be calculated inside the TEEs and are only revealed under certain conditions. The model is not described further in this paper because it is the same as <a href="https://ethereum.org/en/developers/docs/accounts/">Ethereum Accounts</a>.</p>
+
+<p>The transaction and smart contract formats are similar to Ethereum, with a few differences introduced by the confidentiality requirements.</p>
+
+<h3 id="smart-contracts-and-the-ten-vm">Smart Contracts and the TEN VM</h3>
+<p>TEN application developers will write smart contracts in a familiar programming language using familiar blockchain tools and abstractions.
+Due to data privacy concerns, existing smart contracts will have to change before deploying them to TEN.</p>
+
+<p>To implement these requirements, TEN supports a runtime largely compatible with the <em>Ethereum Virtual Machine</em> (EVM) and is derived from an existing implementation such as <a href="https://github.com/ethereum/go-ethereum">Geth</a>, the canonical client of the Ethereum protocol.</p>
+
+<p>On a high level, the <em>TEN Virtual Machine</em> (OVM) will be almost identical to the EVM, but there are significant differences behind the scenes between the data structures used by Ethereum and the ones used by TEN. The rollup structure also differs significantly from the Ethereum block structure as it contains encrypted transactions, plaintext withdrawal instructions, plaintext events, references to L1 blocks, and more. The OVM will eventually introduce new abstractions and primitives to reflect the data privacy requirements and implement data isolation where it is needed. One last significant difference from the EVM is the implementation of the TEN cryptography requirements.</p>
+
+<h3 id="state-confidentiality-between-smart-contracts">State Confidentiality between Smart contracts</h3>
+<p>The main goal of TEN is to protect user data. If smart contracts were wholly isolated from each other, it would be easy to define data access rules.</p>
+
+<p>Contract composition introduces significant complexity. DeFi enjoys massive success thanks to the ability of contracts to be combined in serendipitous ways not predicted by the contract creator, and TEN intends to replicate that.</p>
+
+<p>For example, one contract might have been written to reveal information for the caller’s eyes only in an encrypted response. But if the caller is another contract, that wrapping contract might turn the response into a public broadcast event, visible to everyone.</p>
+
+<p>This area is still under active research. The first version of TEN will rely on application developers to check programmatically who can call different functions and what data they should receive, and therefore developers should reason about what could happen if their contract is called by a contract that they don’t control.</p>
+
+<p>For subsequent versions, TEN explores the following concepts:</p>
+<ul>
+  <li>Each contract can declaratively whitelist contracts that can access different functions.</li>
+  <li>Automatically propagate access. For example, if <em>Account.getBalance()</em> can be invoked only by the owner, it means that any contract that invokes this has to originate from a message signed by the owner. This solution sounds appealing, but it needs more research to determine if this mechanism prevents useful use cases.</li>
+</ul>
+
+<h3 id="wallets-and-transaction-submission">Wallets and Transaction Submission</h3>
+<p>User wallets create transactions encrypted with the <em>TEN public key</em>. Only valid TEEs (i.e. Aggregators and Verifiers) in possession of the Master Seed can decrypt, execute, and see the resulting state. Still, end-users who submitted a transaction must be able to receive the result and query the balance.</p>
+
+<p>A traditional wallet connected to a node on a public blockchain can read the balance of any account and display it to the user. For a similar user experience, TEN-enabled wallets need to submit signed requests to L2 nodes and receive responses that they can display to the user. The responses need to be encrypted with the user key and have to be cryptographic proofs linking the balance to a rollup.</p>
+
+<p>Validity verification of such proofs can be done by first checking the TEE signature and then by checking that the rollup is on the canonical chain of both the L2 and the L1 chains.</p>
+
+<h3 id="smart-contract-types">Smart Contract Types</h3>
+<p>Since all data is temporarily private, and smart contracts are just data, the TEN model supports two types of smart contracts.</p>
+
+<ul>
+  <li>
+    <p><em>Public contracts</em>, which are equivalent to the Ethereum smart contracts in the sense that the source code will be available online, and anyone can build them and compare the hash of the bytecode against the address they are sending commands to.</p>
+  </li>
+  <li>
+    <p><em>Private contracts</em>, for which the developer has not published the source code. These can be used for custom logic like arbitration where the developer intends to keep the profit making strategy hidden from competitors.</p>
+    <h2 id="l1-contracts">L1 Contracts</h2>
+    <p>On the L1 network, several conventional Ethereum contracts act together to form a Management Contract.</p>
+  </li>
+</ul>
+
+<h3 id="network-management">Network Management</h3>
+<p>This contract is the gatekeeper for the protocol. Therefore, any node wishing to join TEN must interact with this contract and prove it is valid.</p>
+
+<ul>
+  <li>It registers L2 nodes, verifies their TEE attestation, and manages their stakes. (Stakes are required for the Aggregators who publish rollups as an incentive to follow the protocol.)</li>
+  <li>It manages the TEE attestation requirements. This means that the governance of the contract can decide which enclave code is approved to join.</li>
+  <li>It manages the L2 TEEs’ shared secret key to be available in case of L2 node failure. The L1 acts as the ultimate high availability storage. Note: This is expanded in the <a href="./cryptography">Cryptography</a> section.</li>
+  <li>It keeps a list of URLs (or IP addresses) for all Aggregators. The use of URLs allows for the underlying IP address to be changed. Verifiers do not stake, and are not a gossip recipient, so their address is not recorded, but they must register in order to attest a correct TEE and to be able to collect rewards.</li>
+</ul>
+
+<h3 id="rollup-management">Rollup Management</h3>
+<p>This contract interacts with the Aggregators.</p>
+
+<ul>
+  <li>It determines whether to accept blocks of transactions submitted by an L2 node. The Rollup contract can only accept a rollup from an Aggregator with a stake and valid attestation, and it checks that the signature of the rollup generated in the TEE matches the TEN_Public_Key registered by the L2 node.</li>
+  <li>It stores the encrypted L2 transactions in an efficient format.</li>
+</ul>
+
+<h3 id="bridge-management">Bridge Management</h3>
+<p>This contract is essential for the solution’s security since all value deposited by end-users is locked in this bridge.</p>
+
+<ul>
+  <li>It acts as a pool where people can deposit assets, like fungible or non-fungible ERC tokens, made available as wrapped tokens to use on the TEN network and can be withdrawn on demand back to an L1.</li>
+  <li>In case of conflicting forks in the rollup chain, it must delay withdrawals until one fork expires or enter a procedure to discover which fork is valid. This is covered in more detail in <a href="./ten-ethereum-interaction#withdrawals">Withdrawals</a>.</li>
+  <li>It may be extended to manage liquidity yields.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/tenprotocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ten-protocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 TEN. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Joining the TEN Network - TEN</title>
+<meta name="description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_UK">
+<meta property="og:site_name" content="TEN">
+<meta property="og:title" content="Joining the TEN Network">
+<meta property="og:url" content="http://localhost:4000/obscuro-whitepaper/registrations.html">
+
+
+  <meta property="og:description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/obscuro-whitepaper/registrations.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "TEN",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom Scripts and Styles -->
+<script src="/assets/js/custom.js" defer></script>
+
+<!-- Custom Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/favicon-32x32.png" alt="TEN"></a>
+        
+        <a class="site-title" href="/">
+          TEN
+          <span class="site-subtitle">The Final Network - a TEE-native encrypted Ethereum Layer 2 for the new internet.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/assets/images/ten-whitepaper-1-0-0.pdf">Download PDF</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Joining the TEN Network">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Joining the TEN Network
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Anyone wishing to join the TEN network as a Node must first check that their hardware is compatible with the latest Attestation Constraints. Next, they must download and install the latest software. Then they must perform the steps detailed below.</p>
+
+<h3 id="node-registration">Node Registration</h3>
+<p>The enclaves must encrypt L2 transactions with a secret key shared across the L2 nodes rather than an enclave-specific key which would be lost if an enclave is damaged.
+Before obtaining the shared secret, the L2 nodes must attest that they are running a valid version of the contract execution environment on a valid CPU.</p>
+
+<p>An L2 node invokes a method on the Network Management Contract to submit their attestation. Another L2 node (which already holds the secret key inside its enclave) responds by confirming the attestation and then updating this record with the shared secret encrypted using the public key of the new node. Whichever existing L2 node replies first, signed by the enclave to guarantee knowledge of the secret, gets a reward. This solves two problems:</p>
+<ol>
+  <li>The Network Management Contract provides a well-known central registration point on a decentralised L1 network that stores the L2 shared secret in public.</li>
+  <li>Existing L2 nodes are compensated for their infrastructure and L1 gas costs to onboard new nodes.</li>
+</ol>
+
+<p>The sequence for node registration is shown in the following diagram:
+<img src="/obscuro-whitepaper/images/node-registration.png" alt="node registration" /></p>
+
+<ol>
+  <li>Any L2 node must register with the Network Management Contract. The node supplies its TEE attestation. It also must pay a fee for the service of receiving the shared secret. If the node wants to be an Aggregator, it has to pay the required stake. The first L2 node to register is responsible for setting up a shared secret from which the entropy for all further secrets is derived.</li>
+  <li>The first L2 node generates a secret and encrypts it with its enclave specific public key to store. It then submits these secrets to the Management Contract, which stores this encrypted secret and registers the public key of the newly formed network. This is covered further in <a href="./cryptography">Cryptography</a>.</li>
+  <li>A new party wishing to become an L2 node uses the Network Management Contract to submit the remote attestation object, which signals to the network that it wants to know the shared secret. The Network Management Contract checks the attestation against the current attestation rules. Existing nodes are incentivised to respond with the encrypted secret. Any node with a valid TEE able to pass the attestation can receive the key from another node.</li>
+  <li>The new node begins executing all the transactions already published to the Rollup Management Contract to synchronise its internally cached state with the other nodes. This includes user deposits and withdrawals into the Bridge contract, as well as confirmed user transactions.</li>
+</ol>
+
+<p>If all L2 nodes go offline, smart contract execution is delayed and resumed when the first node goes online.
+If all L2 nodes are destroyed along with their enclave-derived key pairs, the shared secret key is lost, and the confidential contract state can never again be processed. As long as one L2 node remains bootable and can recreate its enclave-derived key, it may decrypt the shared secret and share it with other nodes. The incentives must ensure that there is enough geographical distribution to make this scenario impossible.</p>
+
+<h3 id="attestation-verification">Attestation Verification</h3>
+<p>The above solution assumes that attestation verification can be implemented efficiently as part of the Network Management Contract. This is the ideal solution since it makes the contract the root of trust for the L2 network. Furthermore, the governance mechanism of the Management Contract controls the attestation requirements, like the hash of the program.</p>
+
+<h3 id="aggregator-registration">Aggregator Registration</h3>
+<p>An Aggregator is a special type of L2 node which has the power to be a sequencer in some rounds and submit rollups.</p>
+
+<p>In addition to node registration, there is an additional step of pledging a stake.</p>
+
+<p>The sequence for node registration is shown in the following diagram:
+<img src="/obscuro-whitepaper/images/aggregator-stake.png" alt="aggregator staking" /></p>
+
+<p>These are the steps to becoming an Aggregator.</p>
+<ul>
+  <li>Register with the L1 Network Management Contract and pay a significant stake in the TEN token. The stake has multiple roles. The first one is to penalise Aggregators who attempt to hack the protocol, and the second is for the Aggregators to buy into the ecosystem and make an effort to keep it running smoothly.</li>
+  <li>Set up a server with a valid, unaltered, up-to-date and secured TEE and provide an attestation from the hardware manufacturer or a delegate to the Management Contract.</li>
+  <li>On seeing this request to join the network published to the L1, another registered TEE shares the secret to encrypt and decrypt user transactions.</li>
+  <li>Once in possession of the secret, the TEE can start processing all the L2 transactions stored on the L1 blockchain and build the state.</li>
+  <li>Upon completion, the new Aggregator can join the gossip with the other Aggregators and participate in the lottery for producing rollups.</li>
+  <li>Some end users send encrypted instructions directly to this node server. The node gossips these with other nodes in the L2 network, encrypted with the shared secret.</li>
+  <li>As Aggregators process messages, they maintain the L2 state in the encrypted TEE memory or encrypted in a local database. Then, if they are the lottery winner, they create a valid rollup and publish it to L1 when the time comes.</li>
+  <li>All Aggregators keep track of the blocks submitted to the Management Contract to ensure they are up-to-date with the source of truth.</li>
+  <li>The first Aggregator to register has a unique role, as it has to create the shared secret.</li>
+</ul>
+
+<p>Note: Each Aggregator needs an ETH balance on the L1 to pay for the submission of the rollup.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/tenprotocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ten-protocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 TEN. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

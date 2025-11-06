@@ -1,0 +1,317 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Fees and Rewards - TEN</title>
+<meta name="description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_UK">
+<meta property="og:site_name" content="TEN">
+<meta property="og:title" content="Fees and Rewards">
+<meta property="og:url" content="http://localhost:4000/obscuro-whitepaper/fees-rewards.html">
+
+
+  <meta property="og:description" content="TEN is an Ethereum-equivalent confidential smart contract L2 network.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/obscuro-whitepaper/fees-rewards.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "TEN",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom Scripts and Styles -->
+<script src="/assets/js/custom.js" defer></script>
+
+<!-- Custom Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/favicon-32x32.png" alt="TEN"></a>
+        
+        <a class="site-title" href="/">
+          TEN
+          <span class="site-subtitle">The Final Network - a TEE-native encrypted Ethereum Layer 2 for the new internet.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/assets/images/ten-whitepaper-1-0-0.pdf">Download PDF</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fees and Rewards">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Fees and Rewards
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>TEN sets out a simple structure for fees and rewards. End users pay fees based on their usage, which are placed into a pool from which rewards for nodes are paid out.</p>
+
+<p>The structure delivers a steady and predictable income for node operators over the long term and a predictable fee for users proportional to the actual costs of running the network and does not rely on bidding wars or vary according to activity.</p>
+
+<p>The structure also does not punish Aggregators that miss out on a publishing opportunity with slashing. Instead, the loss of reward should be incentive enough.</p>
+
+<p>Since TEN does not link fees and rewards directly, the high-level goal of this mechanism is to find a stable equilibrium between the amounts paid into the pool by end-users and the amounts paid out to nodes for their service. In periods of high network usage, the pool will grow, and this extra money will be used in quiet periods to pay for publishing rollups more frequently, thus providing a better user experience.</p>
+
+<h2 id="cost-of-l2-nodes">Cost of L2 nodes</h2>
+
+<p>Operators run the network and incur operational costs by running and maintaining nodes.</p>
+
+<p>An “expected monthly node operational costs” variable is set through the governance protocol, which is designed to reflect how much a node operator would pay for hardware, hosting etc, in a month. This is analogous to the proof of work difficulty found in other blockchains. This affects demand for running a node.</p>
+
+<p>Aggregator nodes incur cost from submitting transactions to L1, through the following:</p>
+
+<ul>
+  <li>Storing rollup data on Ethereum.</li>
+  <li>The overhead of processing the L1 transaction that contains the rollup.</li>
+</ul>
+
+<h2 id="fee-per-transaction">Fee Per Transaction</h2>
+
+<p>The total fee a user must pay has three components.</p>
+
+<ol>
+  <li>A proportion of the monthly operational cost for all nodes. This is calculated based on the computation of the current transaction as a proportion of the moving average of all L2 transactions over the month. Represented as:</li>
+</ol>
+
+<p><img src="/obscuro-whitepaper/images/proportion_equation.png" alt="proportion_equation.png" /></p>
+
+<p><img src="/obscuro-whitepaper/images/operation_equation.png" alt="operation_equation.png" /></p>
+
+<ol>
+  <li>The cost incurred by nodes for L1 storage, represented as:</li>
+</ol>
+
+<p><img src="/obscuro-whitepaper/images/storage_equation.png" alt="storage_equation.png" /></p>
+
+<ol>
+  <li>A proportion of the additional overhead cost incurred by nodes for processing rollups is as follows:</li>
+</ol>
+
+<ul>
+  <li>At the point of transaction, it is impossible to know what the true cost of the future rollup is.</li>
+  <li>Users need to pay their fair share of what this future rollup cost will be.</li>
+  <li>The best indicator of what the future rollup cost might be is a moving average of the previous n rollups.</li>
+  <li>Where n is high, the averaging is performed over a larger number of rollups and therefore less volatile and vice versa.</li>
+  <li>The computation required by TEN nodes to run a transaction is estimated using a metering mechanism similar to the one found in Ethereum.</li>
+  <li>Using this information, TEN calculates the share of each transaction from the total computation in an average block.</li>
+  <li>The basis for calculating the L1 fee is the cost to publish an average rollup to L1.</li>
+  <li>Each transaction pays a share of that cost proportional to its computation.</li>
+</ul>
+
+<p><img src="/obscuro-whitepaper/images/overhead_equation.png" alt="overhead_equation.png" /></p>
+
+<p>This gives the expected fee per transaction as:</p>
+
+<p><img src="/obscuro-whitepaper/images/total_fee_equation.png" alt="total_fee_equation.png" /></p>
+
+<h2 id="rewards-for-l2-nodes">Rewards For L2 nodes</h2>
+
+<p>The TEN protocol rewards both Validators and Aggregators that monitor the network via a lottery. The lottery randomly rewards active nodes each round with an OBX reward for participating. Nodes prove they are alive by claiming their reward within the subsequent few blocks; else, the reward is burned. The reward in each rollup is calculated to cover the operational costs of these nodes.</p>
+
+<p>Aggregator nodes have an additional reward mechanism that pays out rewards in OBX when having successfully published a rollup based on the rules of the POBI protocol. This reward covers at least the L1 gas costs incurred and will not be greater than double the L1 gas cost.</p>
+
+<p>The lottery pay out amount per rollup round is represented as:</p>
+
+<p><img src="/obscuro-whitepaper/images/active_node_reward_equation.png" alt="active_node_reward_equation.png" /></p>
+
+<h2 id="bootstrapping-the-network">Bootstrapping The Network</h2>
+
+<p>When the network first spins up, it is prudent to expect low transaction volume, which can create a situation where:</p>
+
+<ol>
+  <li>Aggregators can publish continually at a high cadence and absorb what might amount to a loss-making operation.</li>
+  <li>Aggregators can throttle the rate at which rollups are published, leading to a poorer user experience.</li>
+  <li>Alternatively, the network can subsidise early transactions allowing both groups to succeed.</li>
+</ol>
+
+<p>While TEN optimises for end-users, early nodes should also be profitable. As such, TEN follows the path of option 3</p>
+
+<p>In the early days of the network, fees will be subsidised by newly minted tokens to ensure early users do not face excessive fees. The price of a transaction is fixed at $1 in OBX until the TEN network is better established. For nodes, there is a period of subsidisation that reduces over time until transaction volume picks up.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/tenprotocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/ten-protocol" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 TEN. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
