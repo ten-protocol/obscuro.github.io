@@ -10,7 +10,7 @@ description: "TEN is an Ethereum-equivalent confidential smart contract L2 netwo
 url: "https://ten.xyz"
 name: "TEN"
 repository: "ten-protocol/obscuro.github.io"
-search: true
+search: false
 logo: "/assets/images/favicon-32x32.png"
 
 plugins:
@@ -31,8 +31,6 @@ defaults:
       path: ""
       type: pages
     values:
-      sidebar:
-        nav: "pages"
       layout: single
       author_profile: false
       strip_title: true
